@@ -22,7 +22,7 @@ module Widgets
         options = {:id => @_tabnav.html[:id] + '_content', :class => @_tabnav.html[:class] + '_content'}
         html << tag('div', options, true)
         html << capture(&block)
-        html << '</div>'
+        html << '</div>'.html_safe
         safe_concat html
         nil # avoid duplication if called with <%= %>
       else
